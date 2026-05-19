@@ -1,0 +1,73 @@
+---
+import { site } from "../site";
+
+const { ottoIntro } = site;
+---
+
+<section id="otto" class="scroll-mt-6 bg-tone" aria-labelledby="otto-intro-heading">
+  <div class="mx-auto max-w-[87rem] px-6 py-16 sm:px-10 sm:py-20 lg:px-[6.5rem] lg:py-24">
+    <div class="max-w-[76rem]">
+      <h2
+        id="otto-intro-heading"
+        class="font-display text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.4] text-type whitespace-pre-line"
+      >
+        {ottoIntro.heading}
+      </h2>
+      <hr class="mt-8 border-0 border-t border-type/25" />
+      <p class="mt-8 font-sans text-[1.375rem] leading-[1.4] text-type">
+        {ottoIntro.body}
+      </p>
+    </div>
+
+    <div class="mt-20 space-y-24 lg:space-y-28">
+      {
+        site.productSteps.map((step) => (
+          <article
+            class:list={[
+              "grid items-start gap-10 lg:grid-cols-2 lg:gap-16",
+              step.iconPosition === "right" && "lg:[&>div:first-child]:order-2",
+            ]}
+          >
+            <div class="flex justify-center lg:justify-start">
+              <img
+                src={step.icon}
+                alt=""
+                class="size-[min(100%,16.5rem)] object-contain"
+                width={265}
+                height={265}
+                loading="lazy"
+              />
+            </div>
+            <div
+              class:list={[
+                "flex flex-col justify-center",
+                step.iconPosition === "right" && "lg:text-right",
+              ]}
+            >
+              <h3 class="font-display text-[2.1875rem] leading-[1.4] text-type">
+                <span class="text-mark">{step.id}</span>
+                <span> {step.title}</span>
+              </h3>
+              <p
+                class:list={[
+                  "mt-4 font-sans text-[1.375rem] leading-[1.4] text-type",
+                  step.iconPosition === "right" && "lg:ml-auto",
+                ]}
+              >
+                {step.summary}
+              </p>
+              <p
+                class:list={[
+                  "mt-4 max-w-[59rem] font-sans text-lg font-light leading-[1.4] text-type",
+                  step.iconPosition === "right" && "lg:ml-auto",
+                ]}
+              >
+                {step.body}
+              </p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

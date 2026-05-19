@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-field: #b9d2e3;
+  --color-tone: #7fa8c4;
+  --color-paper: #f5f1e8;
+  --color-type: #0a162b;
+  --color-mark: #9e2a2b;
+
+  --font-display: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-sans: "JetBrains Mono", ui-monospace, "Cascadia Code", "SF Mono", Menlo, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-field font-sans text-type antialiased;
+  }
+}

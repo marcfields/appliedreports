@@ -1,0 +1,28 @@
+---
+import { site } from "../site";
+import CtaButton from "./CtaButton.astro";
+
+const { heroHeightPx } = site.logos;
+---
+
+<header class="flex items-start justify-between gap-6">
+  <a href="/" class="inline-block shrink-0">
+    <img
+      src={site.logos.company}
+      alt={site.name}
+      class="h-auto w-auto max-w-[min(100%,20rem)]"
+      style={`height:${heroHeightPx}px;width:auto`}
+      width={165}
+      height={heroHeightPx}
+    />
+  </a>
+  <div class="flex shrink-0 items-center gap-6 sm:gap-8">
+    <a
+      href={site.cta.login.href}
+      class="font-sans text-xl font-bold text-type transition hover:text-type/70"
+    >
+      {site.cta.login.label}
+    </a>
+    <CtaButton href={site.cta.primary.href} label={site.cta.primary.label} />
+  </div>
+</header>

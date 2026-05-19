@@ -1,0 +1,30 @@
+---
+import { site } from "../site";
+import CtaButton from "./CtaButton.astro";
+
+const { demoBanner } = site;
+---
+
+<section class="relative min-h-[30rem] overflow-hidden" aria-labelledby="demo-banner-heading">
+  <img
+    src={demoBanner.image}
+    alt=""
+    class="absolute inset-0 size-full object-cover"
+    width={1732}
+    height={481}
+    loading="lazy"
+  />
+  <div class="absolute inset-0 bg-type/30" aria-hidden="true" />
+
+  <div class="relative z-10 mx-auto flex min-h-[30rem] max-w-[87rem] flex-col justify-center px-6 py-16 sm:px-10 lg:px-[6.5rem]">
+    <h2
+      id="demo-banner-heading"
+      class="max-w-[69rem] font-display text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.4] text-paper whitespace-pre-line"
+    >
+      {demoBanner.heading}
+    </h2>
+    <div class="mt-10">
+      <CtaButton href={site.cta.primary.href} label={site.cta.primary.label} variant="field" />
+    </div>
+  </div>
+</section>

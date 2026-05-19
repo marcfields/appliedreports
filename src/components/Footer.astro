@@ -1,0 +1,24 @@
+---
+import { site } from "../site";
+---
+
+<footer class="relative">
+  <img
+    src={site.images.footer}
+    alt=""
+    class="block aspect-[1440/787] w-full object-cover"
+    width={1440}
+    height={787}
+    loading="lazy"
+  />
+  <div class="pointer-events-none absolute inset-0 flex items-center px-6 sm:px-10 lg:px-14">
+    <img
+      src={site.logos.arc}
+      alt="Arc"
+      class="h-auto w-full max-w-[69rem] opacity-95"
+      width={1106}
+      height={134}
+      loading="lazy"
+    />
+  </div>
+</footer>

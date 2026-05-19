@@ -1,0 +1,31 @@
+---
+import { site } from "../site";
+
+interface Props {
+  href: string;
+  label: string;
+  variant?: "mark" | "field" | "paper";
+  class?: string;
+}
+
+const { href, label, variant = "mark", class: className = "" } = Astro.props;
+const { heightPx, minWidthPx, fontSizePx } = site.ctaButton;
+
+const variants = {
+  mark: "bg-mark text-paper hover:bg-mark/90",
+  field: "bg-field text-type hover:bg-field/90",
+  paper: "bg-paper text-type hover:bg-paper/90",
+};
+---
+
+<a
+  href={href}
+  class:list={[
+    "inline-flex items-center justify-center rounded-[5px] font-sans font-bold leading-none transition",
+    variants[variant],
+    className,
+  ]}
+  style={`height:${heightPx}px;min-width:${minWidthPx}px;font-size:${fontSizePx}px;padding-left:1.25rem;padding-right:1.25rem;`}
+>
+  {label}
+</a>
