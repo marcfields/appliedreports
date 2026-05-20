@@ -154,6 +154,7 @@ export const site = {
     login: {
       label: "Login",
       href: "https://reportbolt.halp.co/",
+      newTab: true,
     },
     secondary: {
       label: "Meet Otto",
