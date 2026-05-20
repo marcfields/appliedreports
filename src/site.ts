@@ -109,8 +109,8 @@ export const site = {
   images: {
     heroOverlay: "/images/assets/hero-overlay.png",
     /** Must match hero-overlay.png pixels exactly (aspect ratio drives layout). */
-    heroOverlayWidth: 1440,
-    heroOverlayHeight: 2160,
+    heroOverlayWidth: 7680,
+    heroOverlayHeight: 4320,
     footer: "/images/assets/footer-labs.jpg",
   },
   footer: {

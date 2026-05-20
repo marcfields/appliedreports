@@ -161,17 +161,17 @@
     @apply ml-10 shrink-0;
   }
 
-  /* Hero — background image fills viewport, content on top */
+  /* Hero — full-width image sets height; copy overlays on top */
   .hero {
-    @apply relative min-h-dvh overflow-hidden bg-field;
+    @apply relative w-full bg-field;
   }
 
   .hero__bg {
-    @apply pointer-events-none absolute inset-0 size-full object-cover object-bottom opacity-50;
+    @apply pointer-events-none block h-auto w-full opacity-20;
   }
 
   .hero__content {
-    @apply relative z-10 flex min-h-dvh flex-col;
+    @apply absolute inset-0 z-10 flex flex-col;
   }
 
   .hero-header-spacer {
