@@ -1,0 +1,17 @@
+---
+interface Props {
+  /** Background / theme classes on the inset panel (e.g. `bg-paper text-type`). */
+  panelClass?: string;
+  class?: string;
+  id?: string;
+  "aria-labelledby"?: string;
+}
+
+const { panelClass, class: className, id, "aria-labelledby": ariaLabelledby } = Astro.props;
+---
+
+<section class:list={["bg-field", className]} id={id} aria-labelledby={ariaLabelledby}>
+  <div class:list={["section-panel", panelClass]}>
+    <slot />
+  </div>
+</section>

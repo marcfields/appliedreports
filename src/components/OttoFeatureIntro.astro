@@ -1,13 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import { site } from "../site";
+import SectionPanel from "./SectionPanel.astro";
 import SectionShell from "./SectionShell.astro";
 import ottoProductDemo from "../assets/otto-product-demo.png";
 
 const { ottoFeatureIntro: section } = site;
 ---
 
-<section class="bg-type text-paper" aria-labelledby="otto-feature-heading">
+<SectionPanel panelClass="bg-type text-paper" aria-labelledby="otto-feature-heading">
   <SectionShell>
     <h2 id="otto-feature-heading" class="heading-h2">
       {section.heading}
@@ -29,4 +30,4 @@ const { ottoFeatureIntro: section } = site;
       />
     </div>
   </SectionShell>
-</section>
+</SectionPanel>

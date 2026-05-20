@@ -1,11 +1,12 @@
 ---
 import { site } from "../site";
+import SectionPanel from "./SectionPanel.astro";
 import SectionShell from "./SectionShell.astro";
 
 const { builtFor } = site;
 ---
 
-<section class="bg-field" aria-labelledby="built-for-heading">
+<SectionPanel panelClass="bg-field text-type" aria-labelledby="built-for-heading">
   <SectionShell>
     <h2 id="built-for-heading" class="heading-h2 text-type">
       {builtFor.heading}
@@ -24,7 +25,7 @@ const { builtFor } = site;
               height={150}
               loading="lazy"
             />
-            <h3 class="table-header mt-8 text-type">
+            <h3 class="table-feature mt-8 text-type">
               {item.title}
             </h3>
             <p class="table-body mt-4 text-type whitespace-pre-line">
@@ -35,4 +36,4 @@ const { builtFor } = site;
       }
     </ul>
   </SectionShell>
-</section>
+</SectionPanel>

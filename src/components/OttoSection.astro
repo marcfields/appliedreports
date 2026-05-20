@@ -1,11 +1,17 @@
 ---
 import { site } from "../site";
+import SectionPanel from "./SectionPanel.astro";
 import SectionShell from "./SectionShell.astro";
 
 const { ottoIntro } = site;
 ---
 
-<section id="otto" class="scroll-mt-6 bg-tone" aria-labelledby="otto-intro-heading">
+<SectionPanel
+  id="otto"
+  class="scroll-mt-6"
+  panelClass="bg-tone text-type"
+  aria-labelledby="otto-intro-heading"
+>
   <SectionShell>
     <h2 id="otto-intro-heading" class="heading-h2 text-type whitespace-pre-line">
       {ottoIntro.heading}
@@ -51,7 +57,7 @@ const { ottoIntro } = site;
               </h3>
               <p
                 class:list={[
-                  "table-feature mt-4 text-type",
+                  "step-summary mt-4 text-type",
                   step.iconPosition === "right" && "lg:ml-auto",
                 ]}
               >
@@ -71,4 +77,4 @@ const { ottoIntro } = site;
       }
     </div>
   </SectionShell>
-</section>
+</SectionPanel>

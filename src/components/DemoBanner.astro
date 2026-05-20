@@ -1,12 +1,13 @@
 ---
 import { site } from "../site";
 import CtaButton from "./CtaButton.astro";
+import SectionPanel from "./SectionPanel.astro";
 import SectionShell from "./SectionShell.astro";
 
 const { demoBanner } = site;
 ---
 
-<section class="relative min-h-[30rem] overflow-hidden" aria-labelledby="demo-banner-heading">
+<SectionPanel panelClass="relative min-h-[30rem] overflow-hidden" aria-labelledby="demo-banner-heading">
   <img
     src={demoBanner.image}
     alt=""
@@ -30,4 +31,4 @@ const { demoBanner } = site;
       />
     </div>
   </SectionShell>
-</section>
+</SectionPanel>

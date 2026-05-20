@@ -1,11 +1,12 @@
 ---
 import { site } from "../site";
+import SectionPanel from "./SectionPanel.astro";
 import SectionShell from "./SectionShell.astro";
 
 const { reportTypesSection: section } = site;
 ---
 
-<section id="reports" class="bg-paper" aria-labelledby="reports-heading">
+<SectionPanel id="reports" panelClass="bg-paper text-type" aria-labelledby="reports-heading">
   <SectionShell>
     <h2 id="reports-heading" class="heading-h2 text-type">
       {section.heading}
@@ -35,4 +36,4 @@ const { reportTypesSection: section } = site;
       }
     </ul>
   </SectionShell>
-</section>
+</SectionPanel>
