@@ -18,13 +18,13 @@ const { ottoFeatureIntro: section } = site;
       {section.bodyBefore}
       <strong class="font-bold">{section.bodyBold}</strong>
     </p>
-    <div class="section-content flex justify-center">
+    <div class="section-content">
       <Image
         src={ottoProductDemo}
         alt="Otto in Microsoft Word showing site photos, notes, and writing suggestions"
-        class="w-full max-w-[750px] rounded-[1.2rem]"
-        widths={[750, 600, 400]}
-        sizes="(max-width: 750px) 100vw, 750px"
+        class="otto-demo-image w-full rounded-[1.2rem]"
+        widths={[1500, 1200, 900, 640, 400]}
+        sizes="(max-width: 640px) 100vw, 640px"
         loading="lazy"
         decoding="async"
       />

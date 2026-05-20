@@ -15,6 +15,7 @@ const emailHref = `mailto:${site.contactEmail}`;
     height={787}
     loading="lazy"
   />
+  <div class="footer__scrim" aria-hidden="true"></div>
 
   <div class="footer__content">
     <img
@@ -26,31 +27,25 @@ const emailHref = `mailto:${site.contactEmail}`;
       loading="lazy"
     />
 
-    <nav class="footer__links table-header" aria-label="Footer">
-      <div>
-        <a
-          href={siteHref}
-          class="transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
-        >
-          {footer.siteLabel}
-        </a>
-      </div>
-      <div>
-        <a
-          href={emailHref}
-          class="transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
-        >
-          {footer.emailLabel}
-        </a>
-      </div>
-      <div>
-        <p>
-          <span aria-hidden="true">© </span>
-          {site.year}
-          {" "}
-          {footer.copyrightName}
-        </p>
-      </div>
+    <nav class="footer__links" aria-label="Footer">
+      <a
+        href={siteHref}
+        class="footer__link transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
+      >
+        {footer.siteLabel}
+      </a>
+      <a
+        href={emailHref}
+        class="footer__link transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
+      >
+        {footer.emailLabel}
+      </a>
+      <p class="footer__link">
+        <span aria-hidden="true">© </span>
+        {site.year}
+        {" "}
+        {footer.copyrightName}
+      </p>
     </nav>
   </div>
 </footer>

@@ -8,7 +8,7 @@ const { demoBanner } = site;
 ---
 
 <SectionPanel
-  align="right"
+  align="full"
   panelClass="relative min-h-[30rem] overflow-hidden"
   aria-labelledby="demo-banner-heading"
 >
@@ -22,19 +22,17 @@ const { demoBanner } = site;
   />
   <div class="absolute inset-0 bg-type/30" aria-hidden="true" />
 
-  <SectionShell class="relative z-10 flex min-h-[30rem] flex-col justify-center">
-    <div class="mx-auto flex w-full max-w-[76rem] flex-col items-center text-center">
-      <h2 id="demo-banner-heading" class="heading-h2 text-paper whitespace-pre-line">
-        {demoBanner.heading}
-      </h2>
-      <div class="mt-12">
-        <CtaButton
-          href={site.cta.primary.href}
-          label={site.cta.primary.label}
-          variant="field"
-          newTab={site.cta.primary.newTab}
-        />
-      </div>
+  <SectionShell class="demo-banner__shell relative z-10">
+    <h2 id="demo-banner-heading" class="heading-h2 max-w-[52rem] text-paper whitespace-pre-line">
+      {demoBanner.heading}
+    </h2>
+    <div class="demo-banner__cta">
+      <CtaButton
+        href={site.cta.primary.href}
+        label={site.cta.primary.label}
+        variant="field"
+        newTab={site.cta.primary.newTab}
+      />
     </div>
   </SectionShell>
 </SectionPanel>

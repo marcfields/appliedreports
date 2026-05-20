@@ -200,6 +200,18 @@
     @apply grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6;
   }
 
+  .demo-banner__shell {
+    @apply flex min-h-[30rem] flex-col items-start justify-center text-left;
+  }
+
+  .demo-banner__cta {
+    @apply mt-12;
+  }
+
+  .otto-demo-image {
+    @apply max-w-[40rem];
+  }
+
   /* Footer */
   .footer {
     @apply relative overflow-hidden;
@@ -209,15 +221,23 @@
     @apply block size-full min-h-[clamp(22rem,52vw,49.1875rem)] object-cover object-[center_42%] scale-[1.06];
   }
 
+  .footer__scrim {
+    @apply absolute inset-0 z-[1] bg-type/25;
+  }
+
   .footer__content {
-    @apply absolute inset-0 z-10 flex flex-col items-center justify-center px-8 py-12 sm:px-10 sm:py-16 lg:px-[6.5rem];
+    @apply absolute inset-0 z-10 flex flex-col items-start justify-center px-8 py-20 text-left sm:py-24 lg:px-12 lg:py-25;
   }
 
   .footer__logo {
-    @apply h-auto w-[min(100%,69.125rem)] max-w-[69.125rem] opacity-95;
+    @apply block h-auto w-full max-w-[69.125rem] self-start opacity-95;
   }
 
   .footer__links {
-    @apply mt-8 flex flex-col items-center gap-3 text-center text-field sm:mt-10 sm:gap-4;
+    @apply mt-8 flex max-w-[69.125rem] flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:gap-8;
+  }
+
+  .footer__link {
+    @apply font-sans text-2xl font-normal leading-[1.58] text-field;
   }
 }
