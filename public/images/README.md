@@ -9,8 +9,8 @@ The site only references files on disk (`src/site.ts`). Nothing loads from Figma
 | Path | Role |
 |------|------|
 | `applied-reports-company-logo.svg` | Header wordmark |
-| `assets/otto-product-demo.jpg` | Otto in Word product visual (navy section) |
-| `assets/hero-overlay.jpg` | Hero blueprint overlay (20% opacity) |
+| `assets/otto-product-demo.png` | Otto in Word product visual (navy section) |
+| `assets/hero-overlay.png` | Hero blueprint overlay (20% opacity + field tint) |
 | `assets/demo-banner.jpg` | Managing-partner banner photo |
 | `assets/footer-labs.jpg` | Footer background |
 | `assets/arc-logo.png` | Arc wordmark on footer |

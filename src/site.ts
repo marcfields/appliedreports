@@ -15,7 +15,7 @@ export const site = {
     bodyBefore:
       "Otto is an agent used by engineers to write reports more efficiently. Otto processes site data, builds report sections in the firm template, and surfaces accurate photos, notes, documents, and writing suggestions to the engineer ",
     bodyBold: "directly in Microsoft Word.",
-    image: "/images/assets/otto-product-demo.jpg",
+    image: "/images/assets/otto-product-demo.png",
   },
   reportTypesSection: {
     heading: "Write any report type.",
@@ -63,7 +63,7 @@ export const site = {
     {
       id: "02",
       title: "Collate and create report",
-      summary: "Otto builds report sections from firm templates",
+      summary: "Otto builds report sections from firm templates.",
       body: "Site data inputs are mapped to each section through hybrid search. Photographs are clustered by capture time, system code, embedding, and GPS, then pinned to the matching roof area. Notes are transcribed and component descriptions parsed into the proper sections.",
       icon: "/images/assets/icon-creation.png",
       iconPosition: "right" as const,
@@ -101,10 +101,6 @@ export const site = {
     heading: "Otto gives every engineer a managing partner to write with.",
     image: "/images/assets/demo-banner.jpg",
   },
-  demoForm: {
-    heading: "Otto gives everyone on your team a managing partner to write with",
-    submitLabel: "Book a Demo",
-  },
   logos: {
     company: "/images/applied-reports-company-logo.svg",
     wordmark: "/images/applied-reports-logo.svg",
@@ -112,7 +108,7 @@ export const site = {
     heroHeightPx: 100,
   },
   images: {
-    heroOverlay: "/images/assets/hero-overlay.jpg",
+    heroOverlay: "/images/assets/hero-overlay.png",
     footer: "/images/assets/footer-labs.jpg",
   },
   footer: {
@@ -121,9 +117,9 @@ export const site = {
     copyrightName: "The Applied Reports Company",
   },
   ctaButton: {
-    heightPx: 48,
-    minWidthPx: 165,
-    fontSizePx: 20,
+    heightPx: 39,
+    minWidthPx: 156,
+    fontSizePx: 16,
   },
   cta: {
     primary: {
