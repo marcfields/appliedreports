@@ -2,8 +2,6 @@
 import { site } from "../site";
 
 const { footer } = site;
-const siteHref = site.url;
-const emailHref = `mailto:${site.contactEmail}`;
 ---
 
 <footer class="footer">
@@ -15,37 +13,48 @@ const emailHref = `mailto:${site.contactEmail}`;
     height={787}
     loading="lazy"
   />
-  <div class="footer__scrim" aria-hidden="true"></div>
 
   <div class="footer__content">
-    <img
-      src={site.logos.arc}
-      alt={site.name}
-      class="footer__logo"
-      width={1106}
-      height={134}
-      loading="lazy"
-    />
+    <div class="footer__brand">
+      <img
+        src={site.logos.arc}
+        alt={site.name}
+        class="footer__logo"
+        width={footer.logoWidthPx}
+        height={footer.logoHeightPx}
+        loading="lazy"
+      />
 
-    <nav class="footer__links" aria-label="Footer">
-      <a
-        href={siteHref}
-        class="footer__link transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
-      >
-        {footer.siteLabel}
-      </a>
-      <a
-        href={emailHref}
-        class="footer__link transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
-      >
-        {footer.emailLabel}
-      </a>
-      <p class="footer__link">
-        <span aria-hidden="true">© </span>
-        {site.year}
-        {" "}
-        {footer.copyrightName}
-      </p>
-    </nav>
+      <ul class="footer__links" aria-label="Footer">
+        {
+          footer.links.map((item) => (
+            <li
+              class:list={[
+                "footer__link-item",
+                item.align === "start" && "footer__link-item--start",
+                item.align === "center" && "footer__link-item--center",
+                item.align === "end" && "footer__link-item--end",
+              ]}
+            >
+              {item.kind === "link" ? (
+                <a
+                  href={item.href}
+                  class="footer__link transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <p class="footer__link">
+                  <span aria-hidden="true">© </span>
+                  {site.year}
+                  {" "}
+                  {footer.copyrightName}
+                </p>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
 </footer>

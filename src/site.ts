@@ -111,9 +111,27 @@ export const site = {
     footer: "/images/assets/footer-labs.jpg",
   },
   footer: {
-    siteLabel: "appliedreports.com",
-    emailLabel: "hello@appliedreports.com",
+    logoWidthPx: 1106,
+    logoHeightPx: 134,
     copyrightName: "The Applied Reports Company",
+    links: [
+      {
+        kind: "link" as const,
+        label: "appliedreports.com",
+        href: "https://appliedreports.com",
+        align: "start" as const,
+      },
+      {
+        kind: "link" as const,
+        label: "hello@appliedreports.com",
+        href: "mailto:hello@appliedreports.com",
+        align: "center" as const,
+      },
+      {
+        kind: "copyright" as const,
+        align: "end" as const,
+      },
+    ],
   },
   ctaButton: {
     heightPx: 39,

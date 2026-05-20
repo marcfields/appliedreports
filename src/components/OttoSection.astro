@@ -8,7 +8,6 @@ const { ottoIntro } = site;
 
 <SectionPanel
   id="otto"
-  align="right"
   class="scroll-mt-6"
   panelClass="bg-tone text-type"
   aria-labelledby="otto-intro-heading"
@@ -46,30 +45,15 @@ const { ottoIntro } = site;
                 loading="lazy"
               />
             </div>
-            <div
-              class:list={[
-                "flex flex-col justify-center",
-                step.iconPosition === "right" && "lg:text-right",
-              ]}
-            >
+            <div class="flex flex-col justify-center text-left">
               <h3 class="heading-h3 text-type">
                 <span class="text-mark">{step.id}</span>
                 <span> {step.title}</span>
               </h3>
-              <p
-                class:list={[
-                  "heading-h4 mt-4 text-type",
-                  step.iconPosition === "right" && "lg:ml-auto",
-                ]}
-              >
+              <p class="heading-h4 mt-4 text-type">
                 {step.summary}
               </p>
-              <p
-                class:list={[
-                  "table-body mt-4 max-w-[59rem] text-type",
-                  step.iconPosition === "right" && "lg:ml-auto",
-                ]}
-              >
+              <p class="table-body mt-4 text-type">
                 {step.body}
               </p>
             </div>

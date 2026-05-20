@@ -1,29 +1,15 @@
 ---
 interface Props {
-  /** Background / theme classes on the inset panel (e.g. `bg-paper text-type`). */
+  /** Background / theme classes on the section (e.g. `bg-paper text-type`). */
   panelClass?: string;
-  /** `full` = hero (edge-to-edge). `left` / `right` = 1380px block flush to that side. */
-  align?: "full" | "left" | "right";
   class?: string;
   id?: string;
   "aria-labelledby"?: string;
 }
 
-const { panelClass, align = "right", class: className, id, "aria-labelledby": ariaLabelledby } =
-  Astro.props;
-
-const alignClass =
-  align === "full"
-    ? "w-full max-w-none"
-    : align === "left"
-      ? "section-block section-block--left"
-      : "section-block section-block--right";
+const { panelClass, class: className, id, "aria-labelledby": ariaLabelledby } = Astro.props;
 ---
 
-<section
-  class:list={[alignClass, panelClass, className]}
-  id={id}
-  aria-labelledby={ariaLabelledby}
->
+<section class:list={["w-full", panelClass, className]} id={id} aria-labelledby={ariaLabelledby}>
   <slot />
 </section>

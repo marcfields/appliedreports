@@ -48,30 +48,22 @@
 }
 
 @layer components {
-  /* Page rhythm */
+  /* Shared horizontal alignment — nav, hero, sections, footer (1380px / 32–48px pad) */
+  .page-content,
+  .section-shell,
+  .site-header__inner,
+  .hero-shell,
+  .footer__brand {
+    @apply mx-auto w-full max-w-[86.25rem] px-8 lg:px-12;
+  }
+
+  /* Page rhythm — full-bleed sections, vertical spacing inside each shell */
   .page-sections {
-    @apply flex flex-col gap-20 bg-field sm:gap-30;
+    @apply flex flex-col bg-field;
   }
 
-  /* Offset color blocks — 1380px wide, flush left or right */
-  .section-block {
-    width: min(1380px, 100%);
-    max-width: 1380px;
-  }
-
-  .section-block--right {
-    margin-left: auto;
-    margin-right: 0;
-  }
-
-  .section-block--left {
-    margin-left: 0;
-    margin-right: auto;
-  }
-
-  /* Section layout */
   .section-shell {
-    @apply px-8 py-20 lg:px-12 lg:py-25;
+    @apply py-20 text-left lg:py-25;
   }
 
   .section-divider {
@@ -83,7 +75,7 @@
   }
 
   .section-lead {
-    @apply mt-8 max-w-[76rem] font-sans text-lg font-normal leading-[1.7] max-sm:text-base;
+    @apply mt-8 w-full font-sans text-lg font-normal leading-[1.7] max-sm:text-base;
   }
 
   .section-content {
@@ -147,11 +139,11 @@
 
   /* Navbar */
   .site-header__inner {
-    @apply mx-auto flex h-16 w-full max-w-[1280px] items-center px-8 md:h-20 lg:px-12;
+    @apply flex h-16 items-center md:h-20;
   }
 
   .site-header__logo {
-    @apply h-8 w-auto md:h-10;
+    @apply h-10 w-auto md:h-12;
   }
 
   .site-header__nav {
@@ -163,7 +155,7 @@
   }
 
   .site-header__cta {
-    @apply ml-6 shrink-0;
+    @apply ml-10 shrink-0 md:ml-12;
   }
 
   /* Hero */
@@ -172,7 +164,7 @@
   }
 
   .hero-shell {
-    @apply flex flex-1 flex-col justify-center px-8 pb-20 pt-12 sm:px-10 sm:pb-24 sm:pt-14 lg:px-[6.5rem] lg:pb-30 lg:pt-20;
+    @apply flex flex-1 flex-col justify-center pb-20 pt-12 sm:pb-24 sm:pt-14 lg:pb-30 lg:pt-20;
   }
 
   .hero-copy {
@@ -221,23 +213,35 @@
     @apply block size-full min-h-[clamp(22rem,52vw,49.1875rem)] object-cover object-[center_42%] scale-[1.06];
   }
 
-  .footer__scrim {
-    @apply absolute inset-0 z-[1] bg-type/25;
+  .footer__content {
+    @apply absolute inset-0 z-10 flex items-center justify-center py-12 sm:py-16 lg:py-20;
   }
 
-  .footer__content {
-    @apply absolute inset-0 z-10 flex flex-col items-start justify-center px-8 py-20 text-left sm:py-24 lg:px-12 lg:py-25;
+  .footer__brand {
+    @apply flex w-full flex-col items-stretch;
   }
 
   .footer__logo {
-    @apply block h-auto w-full max-w-[69.125rem] self-start opacity-95;
+    @apply mx-auto block h-auto w-full opacity-95;
   }
 
   .footer__links {
-    @apply mt-8 flex max-w-[69.125rem] flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:gap-8;
+    @apply mt-8 grid w-full grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4;
+  }
+
+  .footer__link-item--start {
+    @apply text-left;
+  }
+
+  .footer__link-item--center {
+    @apply text-left sm:text-center;
+  }
+
+  .footer__link-item--end {
+    @apply text-left sm:text-right;
   }
 
   .footer__link {
-    @apply font-sans text-2xl font-normal leading-[1.58] text-field;
+    @apply font-sans text-base font-semibold leading-[1.4] text-field;
   }
 }
