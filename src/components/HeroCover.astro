@@ -10,13 +10,12 @@ const [heroLineOne, heroLineTwo] = site.heroHeadline;
   <img
     src={site.images.heroOverlay}
     alt=""
-    class="pointer-events-none absolute inset-0 size-full object-cover object-bottom opacity-20"
+    class="pointer-events-none absolute inset-0 size-full object-cover object-bottom opacity-50"
     width={1920}
     height={1080}
     loading="eager"
     decoding="async"
   />
-  <div class="pointer-events-none absolute inset-0 bg-field/40" aria-hidden="true"></div>
 
   <div class="relative z-10 mx-auto flex min-h-dvh max-w-[90rem] flex-col px-6 pb-16 pt-8 sm:px-10 sm:pb-20 sm:pt-10 lg:px-[6.5rem]">
     <SiteHeader />

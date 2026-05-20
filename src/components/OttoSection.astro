@@ -24,17 +24,22 @@ const { ottoIntro } = site;
         site.productSteps.map((step) => (
           <article
             class:list={[
-              "grid items-start gap-10 lg:grid-cols-2 lg:gap-16",
+              "grid items-center gap-10 lg:grid-cols-2 lg:gap-16",
               step.iconPosition === "right" && "lg:[&>div:first-child]:order-2",
             ]}
           >
-            <div class="flex justify-center lg:justify-start">
+            <div
+              class:list={[
+                "flex w-full justify-center",
+                step.iconPosition === "right" ? "lg:justify-end" : "lg:justify-start",
+              ]}
+            >
               <img
                 src={step.icon}
                 alt=""
-                class="size-[min(100%,21.875rem)] object-contain"
-                width={350}
-                height={350}
+                class="w-full max-w-[28rem] object-contain"
+                width={448}
+                height={448}
                 loading="lazy"
               />
             </div>

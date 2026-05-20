@@ -47,7 +47,7 @@ export const site = {
     ],
   },
   ottoIntro: {
-    heading: "Your business is reports.\nWhy are they so hard to get done?",
+    heading: "A better way to write AEC reports.",
     body: "Otto is an agent used by engineers to write reports more efficiently. Otto processes site data, builds report sections in the firm template, and surfaces accurate photos, notes, documents, and writing suggestions to the engineer directly in Microsoft Word.",
   },
   productSteps: [
