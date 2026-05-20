@@ -6,7 +6,7 @@ export const site = {
   year: 2026,
   contactEmail: "hello@appliedreports.com",
   heroKicker: "AI for Building Engineers",
-  heroLine: "Transform raw data into complete reports",
+  heroHeadline: ["Transform raw data into", "complete reports"] as const,
   heroSubcopy:
     "Write building engineering reports more efficiently directly in Microsoft Word with Otto.",
   ottoFeatureIntro: {
