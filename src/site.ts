@@ -123,7 +123,7 @@ export const site = {
   cta: {
     primary: {
       label: "Book a Demo",
-      href: "https://cal.com/team/applied-reports/otto-demo",
+      href: "https://cal.com/team/applied-reports/discovery-call",
       newTab: true,
     },
     login: {
