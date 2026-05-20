@@ -13,8 +13,6 @@ interface Props {
 const { href, label, variant = "mark", size = "default", class: className = "", newTab = false } =
   Astro.props;
 
-const { heightPx, minWidthPx, fontSizePx, navHeightPx, navPaddingX, navFontSizePx } = site.ctaButton;
-
 const variants = {
   mark: "bg-mark text-paper hover:bg-mark/90",
   field: "bg-field text-type hover:bg-field/90",
@@ -26,17 +24,7 @@ const isNav = size === "nav";
 
 <a
   href={href}
-  class:list={[
-    "inline-flex items-center justify-center rounded-lg font-sans leading-none transition",
-    isNav ? "text-lg font-semibold" : "font-medium",
-    variants[variant],
-    className,
-  ]}
-  style={
-    isNav
-      ? `height:${navHeightPx}px;font-size:${navFontSizePx}px;padding:14px ${navPaddingX}px;`
-      : `height:${heightPx}px;min-width:${minWidthPx}px;font-size:${fontSizePx}px;padding-left:1.25rem;padding-right:1.25rem;`
-  }
+  class:list={["btn", isNav && "btn--nav", variants[variant], className]}
   target={newTab ? "_blank" : undefined}
   rel={newTab ? "noopener noreferrer" : undefined}
 >

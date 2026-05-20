@@ -6,12 +6,17 @@ import SectionShell from "./SectionShell.astro";
 import ottoProductDemo from "../assets/otto-product-demo.png";
 
 const { ottoFeatureIntro: section } = site;
+const [headlineOne, headlineTwo] = section.heading;
 ---
 
 <SectionPanel panelClass="bg-type text-paper" aria-labelledby="otto-feature-heading">
   <SectionShell>
-    <h2 id="otto-feature-heading" class="heading-h2">
-      {section.heading}
+    <h2
+      id="otto-feature-heading"
+      class="heading-h2 flex max-w-6xl flex-col gap-1 sm:gap-1.5"
+    >
+      <span>{headlineOne}</span>
+      <span>{headlineTwo}</span>
     </h2>
     <hr class="section-divider-light" />
     <p class="section-lead">
@@ -19,15 +24,17 @@ const { ottoFeatureIntro: section } = site;
       <strong class="font-bold">{section.bodyBold}</strong>
     </p>
     <div class="section-content otto-feature-visual">
-      <Image
-        src={ottoProductDemo}
-        alt="Otto in Microsoft Word showing site photos, notes, and writing suggestions"
-        class="otto-demo-image"
-        widths={[1500, 1200, 900, 640, 400]}
-        sizes="(max-width: 46.875rem) 100vw, 750px"
-        loading="lazy"
-        decoding="async"
-      />
+      <div class="media-frame media-frame--otto-demo">
+        <Image
+          src={ottoProductDemo}
+          alt="Otto in Microsoft Word showing site photos, notes, and writing suggestions"
+          class="media-frame__img"
+          widths={[1500, 1200, 900, 640, 400]}
+          sizes="(max-width: 46.875rem) 100vw, 750px"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
     </div>
   </SectionShell>
 </SectionPanel>

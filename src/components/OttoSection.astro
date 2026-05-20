@@ -26,7 +26,7 @@ const { ottoIntro } = site;
         site.productSteps.map((step) => (
           <article
             class:list={[
-              "grid items-center gap-8 lg:grid-cols-2 lg:gap-8",
+              "process-step",
               step.iconPosition === "right" && "lg:[&>div:first-child]:order-2",
             ]}
           >
@@ -36,24 +36,26 @@ const { ottoIntro } = site;
                 step.iconPosition === "right" ? "lg:justify-end" : "lg:justify-start",
               ]}
             >
-              <img
-                src={step.icon}
-                alt=""
-                class="w-full max-w-[28rem] object-contain"
-                width={448}
-                height={448}
-                loading="lazy"
-              />
+              <div class="media-frame aspect-square w-full max-w-[28rem]">
+                <img
+                  src={step.icon}
+                  alt=""
+                  class="media-frame__img"
+                  width={448}
+                  height={448}
+                  loading="lazy"
+                />
+              </div>
             </div>
-            <div class="flex flex-col justify-center text-left">
+            <div class="process-step__copy">
               <h3 class="heading-h3 text-type">
                 <span class="text-mark">{step.id}</span>
                 <span> {step.title}</span>
               </h3>
-              <p class="heading-h4 mt-4 text-type">
+              <p class="heading-h4 text-type">
                 {step.summary}
               </p>
-              <p class="table-body mt-4 text-type">
+              <p class="table-body text-type">
                 {step.body}
               </p>
             </div>

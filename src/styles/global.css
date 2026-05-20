@@ -34,6 +34,32 @@
 
   --font-display: "GT Sectra Display", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --font-sans: "JetBrains Mono", ui-monospace, "Cascadia Code", "SF Mono", Menlo, monospace;
+
+  /* Layout & interaction tokens (audit: 1280px content, 48px buttons, 44px touch) */
+  --width-content: 80rem;
+  --min-height-button: 3rem; /* 48px — hero & primary CTAs */
+  --min-height-touch: 2.75rem;
+
+  /* Typography — 1.25 modular scale; 16px mobile base, 18px md+ */
+  --type-ratio: 1.25;
+  --font-size-base: 1rem;
+  --font-size-base-md: 1.125rem;
+  --font-size-h4: calc(var(--font-size-base) * var(--type-ratio));
+  --font-size-h3: calc(var(--font-size-base) * var(--type-ratio) * var(--type-ratio));
+  --font-size-h2: 2rem;
+  --font-size-h2-lg: 2.25rem;
+  --line-height-body: 1.7;
+  --letter-spacing-body: -0.025em;
+
+  /* Spacing — 8px base grid (use these steps only) */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+  --space-24: 6rem; /* 96px */
 }
 
 @layer base {
@@ -43,17 +69,65 @@
   }
 
   body {
-    @apply overflow-x-hidden bg-field font-sans text-type antialiased;
+    @apply overflow-x-hidden bg-field font-sans text-base leading-[1.7] tracking-[-0.025em] text-pretty text-type antialiased md:text-lg;
   }
 }
 
 @layer components {
-  /* Shared horizontal alignment — nav, hero, sections, footer (1380px / 32–48px pad) */
+  /* Shared horizontal alignment — nav, hero, sections (1280px / responsive pad) */
   .page-content,
   .section-shell,
   .site-header__inner,
   .hero-shell {
-    @apply mx-auto w-full max-w-[86.25rem] px-8 lg:px-12;
+    @apply mx-auto w-full max-w-(--width-content) px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Buttons — 48px height (WCAG touch); full width below sm */
+  .btn {
+    @apply inline-flex h-12 min-h-12 w-full min-w-[9.75rem] items-center justify-center rounded-lg px-6 py-3 text-base font-medium leading-none transition sm:w-auto md:px-8;
+  }
+
+  .btn--nav {
+    @apply h-12 min-h-12 min-w-(--min-height-touch) w-auto px-7 text-lg font-semibold;
+  }
+
+  /* WCAG 2.2 — 44×44px minimum touch targets (mobile-first) */
+  .touch-target {
+    @apply inline-flex min-h-(--min-height-touch) min-w-(--min-height-touch) items-center justify-center;
+  }
+
+  /* Long copy — 16px mobile, pretty wraps, readable measure */
+  .readable-prose {
+    @apply max-md:mx-auto max-md:max-w-[36ch] max-md:text-base text-pretty;
+  }
+
+  /* Supporting visuals — fixed aspect, no stretch */
+  .media-frame {
+    @apply relative w-full overflow-hidden;
+  }
+
+  .media-frame--16-9 {
+    aspect-ratio: 16 / 9;
+  }
+
+  .media-frame--4-3 {
+    aspect-ratio: 4 / 3;
+  }
+
+  .media-frame--demo-banner {
+    aspect-ratio: 1440 / 481;
+  }
+
+  .media-frame--otto-demo {
+    aspect-ratio: 1500 / 1386;
+  }
+
+  .media-frame__img {
+    @apply size-full object-contain;
+  }
+
+  .media-frame__img--cover {
+    @apply object-cover;
   }
 
   /* Page rhythm — full-bleed sections, vertical spacing inside each shell */
@@ -62,52 +136,74 @@
   }
 
   .section-shell {
-    @apply py-20 text-left lg:py-25;
+    @apply py-16 text-left lg:py-24;
   }
 
+  /* H2 → divider: 24px; divider → body/content: 32px */
   .section-divider {
-    @apply mt-8 border-0 border-t border-dashed border-type/20;
+    @apply mt-6 border-0 border-t border-dashed border-type/20;
   }
 
   .section-divider-light {
-    @apply mt-8 border-0 border-t border-dashed border-paper/25;
+    @apply mt-6 border-0 border-t border-dashed border-paper/25;
   }
 
   .section-lead {
-    @apply mt-8 w-full font-sans text-lg font-normal leading-[1.7] max-sm:text-base;
+    @apply mt-8 w-full max-md:mx-auto max-md:max-w-[36ch] max-md:text-base font-sans font-normal leading-[1.7] tracking-[-0.025em] text-pretty md:text-xl;
   }
 
   .section-content {
     @apply mt-8;
   }
 
-  .section-steps {
-    @apply mt-8 space-y-8 lg:space-y-8;
+  .section-content.report-types-grid {
+    @apply mt-6;
   }
 
-  /* Typography scale */
+  .section-steps {
+    @apply mt-8 space-y-8 lg:space-y-12;
+  }
+
+  .process-step {
+    @apply grid items-center gap-8 lg:grid-cols-2 lg:gap-12;
+  }
+
+  .process-step__copy {
+    @apply flex flex-col gap-6 p-6 text-pretty lg:p-8;
+  }
+
+  .process-step__copy .table-body,
+  .process-step__copy .heading-h4 {
+    @apply max-md:mx-0 max-md:max-w-[36ch] max-md:text-base;
+  }
+
+  /* Typography scale — ratio 1.25; headings 600–700, body inherits 16/18px base */
+  .heading-eyebrow {
+    @apply font-sans text-[1.5rem] font-semibold leading-[1.35] tracking-[-0.02em] md:text-[1.75rem];
+  }
+
   .heading-h2 {
-    @apply font-display text-[clamp(2.25rem,4.5vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.03em];
+    @apply max-w-6xl font-display text-[clamp(2rem,4.5vw,2.25rem)] font-bold leading-[1.15] tracking-[-0.03em] text-pretty md:text-balance;
   }
 
   .heading-h3 {
-    @apply font-display text-4xl font-semibold leading-[1.17];
+    @apply font-display text-[1.5625rem] font-semibold leading-[1.2] md:text-[1.75rem];
   }
 
   .heading-h4 {
-    @apply font-sans text-2xl font-semibold leading-[1.4];
+    @apply font-sans text-[1.125rem] font-semibold leading-[1.4] md:text-[1.25rem];
   }
 
   .body-text {
-    @apply font-sans text-lg font-normal leading-[1.7] max-sm:text-base;
+    @apply max-md:mx-auto max-md:max-w-[36ch] max-md:text-base font-sans font-normal leading-[1.7] tracking-[-0.025em] text-pretty;
   }
 
   .hero-kicker {
-    @apply font-sans text-2xl font-normal leading-[1.58] text-[#0e5bd6];
+    @apply font-sans text-[1.5rem] font-semibold leading-[1.35] tracking-[-0.02em] text-[#0e5bd6] md:text-[1.75rem];
   }
 
   .hero-h1 {
-    @apply font-display text-[clamp(2.75rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.04em] text-balance;
+    @apply font-display text-[clamp(2rem,7vw,5.5rem)] font-bold leading-[1.12] tracking-[-0.04em] text-balance sm:leading-[1.05];
   }
 
   @media (min-width: 40rem) {
@@ -117,23 +213,23 @@
   }
 
   .hero-subcopy {
-    @apply mx-auto max-w-[56rem] font-sans text-2xl font-normal leading-[1.58] text-pretty;
+    @apply mx-auto max-w-[36ch] font-sans text-base font-normal leading-[1.65] tracking-[-0.025em] text-pretty md:max-w-[56rem] md:text-xl;
   }
 
   .table-header {
-    @apply font-sans text-lg font-semibold leading-[1.4];
+    @apply max-md:mx-auto max-md:max-w-[36ch] max-md:text-base font-sans font-semibold leading-[1.4] tracking-[-0.025em] text-pretty;
   }
 
   .table-body {
-    @apply font-sans text-lg font-normal leading-[1.7] max-sm:text-base;
+    @apply max-md:mx-auto max-md:max-w-[36ch] max-md:text-base font-sans font-normal leading-[1.7] tracking-[-0.025em] text-pretty;
   }
 
   .table-feature {
-    @apply font-sans text-lg font-medium leading-[1.7] max-sm:text-base;
+    @apply max-md:mx-auto max-md:max-w-[36ch] max-md:text-base font-sans font-medium leading-[1.7] tracking-[-0.025em] text-pretty;
   }
 
   .nav-link {
-    @apply font-sans text-lg font-semibold leading-none text-type transition hover:text-type/70;
+    @apply inline-flex min-h-(--min-height-touch) min-w-(--min-height-touch) w-auto items-center justify-center font-sans text-base font-semibold leading-[1.4] text-type transition hover:text-type/70 md:text-lg;
   }
 
   /* Navbar */
@@ -191,12 +287,24 @@
   }
 
   .hero-copy__cta {
-    @apply mt-12;
+    @apply mt-8;
   }
 
   /* Cards / feature blocks */
   .feature-card {
-    @apply flex flex-col items-center px-4 py-8 text-center sm:px-6 lg:px-8;
+    @apply flex flex-col items-center gap-8 px-6 py-6 text-center lg:px-8;
+  }
+
+  .report-type-card {
+    @apply flex flex-col items-center gap-6 p-4 text-center sm:p-6;
+  }
+
+  .report-type-card .table-body {
+    @apply mx-0 line-clamp-2 max-w-none text-base leading-snug text-pretty;
+  }
+
+  .report-type-card__abbr {
+    @apply block text-sm font-normal text-type/65;
   }
 
   .feature-card .heading-h4,
@@ -205,11 +313,15 @@
   }
 
   .feature-grid {
-    @apply grid grid-cols-1 gap-y-12 sm:grid-cols-3 sm:gap-y-12 sm:gap-x-16 lg:gap-x-24;
+    @apply grid grid-cols-1 gap-x-16 gap-y-8 sm:grid-cols-3 lg:gap-x-24;
   }
 
   .report-types-grid {
-    @apply grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6;
+    @apply grid grid-cols-2 gap-6 gap-y-8 sm:grid-cols-3 sm:gap-8 lg:grid-cols-6;
+  }
+
+  .demo-banner {
+    @apply relative w-full overflow-hidden;
   }
 
   .demo-banner__shell {
@@ -217,15 +329,11 @@
   }
 
   .demo-banner__cta {
-    @apply mt-12;
+    @apply mt-8;
   }
 
   .otto-feature-visual {
-    @apply flex justify-center;
-  }
-
-  .otto-demo-image {
-    @apply block h-auto w-full max-w-[46.875rem];
+    @apply mx-auto flex w-full max-w-[46.875rem] justify-center;
   }
 
   /* Footer */
@@ -238,11 +346,11 @@
   }
 
   .footer__content {
-    @apply absolute inset-0 z-10 flex items-center justify-center px-8 py-12 sm:py-16 lg:px-12 lg:py-20;
+    @apply absolute inset-0 z-10 flex items-center justify-center px-6 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20;
   }
 
   .footer__brand {
-    @apply flex w-full max-w-[69.125rem] flex-col items-stretch;
+    @apply flex w-full max-w-(--width-content) flex-col items-stretch;
   }
 
   .footer__logo {
@@ -270,7 +378,7 @@
   }
 
   .footer__link {
-    @apply font-sans text-base font-semibold leading-[1.4] text-field;
+    @apply inline-flex min-h-(--min-height-touch) min-w-(--min-height-touch) w-auto items-center justify-center font-sans text-base font-semibold leading-[1.4] text-field;
   }
 
   .footer__link-item--end .footer__link {

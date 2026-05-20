@@ -16,7 +16,7 @@ const { builtFor } = site;
     <ul class="section-content feature-grid">
       {
         builtFor.items.map((item) => (
-          <li class="feature-card items-center text-center">
+          <li class="feature-card">
             <img
               src={item.icon}
               alt=""
@@ -25,10 +25,10 @@ const { builtFor } = site;
               height={150}
               loading="lazy"
             />
-            <h3 class="heading-h4 mt-8 text-type">
+            <h3 class="heading-h4 text-type">
               {item.title}
             </h3>
-            <p class="table-body mt-4 text-type whitespace-pre-line">
+            <p class="table-body text-type whitespace-pre-line">
               {item.body}
             </p>
           </li>

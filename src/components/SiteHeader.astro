@@ -5,7 +5,7 @@ import CtaButton from "./CtaButton.astro";
 
 <header class="site-header absolute inset-x-0 top-0 z-50 w-full">
   <div class="site-header__inner">
-    <a href="/" class="inline-block shrink-0">
+    <a href="/" class="touch-target inline-block shrink-0">
       <img
         src={site.logos.company}
         alt={site.name}
@@ -38,7 +38,7 @@ import CtaButton from "./CtaButton.astro";
 
     <details class="relative ml-auto md:hidden">
       <summary
-        class="flex size-7 list-none items-center justify-center text-type [&::-webkit-details-marker]:hidden"
+        class="touch-target list-none text-type [&::-webkit-details-marker]:hidden"
         aria-label="Open menu"
       >
         <svg
@@ -67,9 +67,9 @@ import CtaButton from "./CtaButton.astro";
           {site.cta.login.label}
         </a>
         <CtaButton
+          class="w-full"
           href={site.cta.primary.href}
           label={site.cta.primary.label}
-          size="nav"
           newTab={site.cta.primary.newTab}
         />
       </div>

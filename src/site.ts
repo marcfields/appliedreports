@@ -10,8 +10,10 @@ export const site = {
   heroSubcopy:
     "Write building engineering reports more efficiently directly in Microsoft Word with Otto.",
   ottoFeatureIntro: {
-    heading:
-      "Otto helps engineers write reports faster without compromising accuracy or firm style.",
+    heading: [
+      "Otto helps engineers write reports faster",
+      "without compromising accuracy or firm style.",
+    ] as const,
     bodyBefore:
       "Otto is an agent used by engineers to write reports more efficiently. Otto processes site data, builds report sections in the firm template, and surfaces accurate photos, notes, documents, and writing suggestions to the engineer ",
     bodyBold: "directly in Microsoft Word.",
@@ -21,23 +23,28 @@ export const site = {
     body: "Otto works with a growing list of report types, and can adapt to produce any report the firm authors. Applied Reports works directly with firm engineers to adapt custom or novel templates and report types.",
     items: [
       {
-        label: "Property Condition Assessments",
+        label: "Property Condition",
+        abbr: "PCA",
         icon: "/images/assets/icon-pca.png",
       },
       {
-        label: "Roofing Condition Assessments",
+        label: "Roofing Condition",
+        abbr: "RCA",
         icon: "/images/assets/icon-rca.png",
       },
       {
         label: "Reserve Fund Studies",
+        abbr: "RFS",
         icon: "/images/assets/icon-rfs.png",
       },
       {
-        label: "Site Observation Reports",
+        label: "Site Observation",
+        abbr: "SOR",
         icon: "/images/assets/icon-sor.png",
       },
       {
-        label: "Environmental Site Assessments",
+        label: "Environmental Site",
+        abbr: "ESA",
         icon: "/images/assets/icon-esa.png",
       },
       {
@@ -137,8 +144,9 @@ export const site = {
       },
     ],
   },
+  /** Button sizing lives in global.css `.btn` tokens (48px height, responsive padding). */
   ctaButton: {
-    heightPx: 39,
+    heightPx: 48,
     minWidthPx: 156,
     fontSizePx: 16,
     navHeightPx: 48,

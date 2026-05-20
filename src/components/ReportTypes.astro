@@ -19,7 +19,7 @@ const { reportTypesSection: section } = site;
     <ul class="section-content report-types-grid">
       {
         section.items.map((item) => (
-          <li class="flex flex-col items-center text-center">
+          <li class="report-type-card">
             <img
               src={item.icon}
               alt=""
@@ -28,8 +28,11 @@ const { reportTypesSection: section } = site;
               height={150}
               loading="lazy"
             />
-            <p class="table-body mt-4 text-type whitespace-pre-line">
+            <p class="table-body text-type">
               {item.label}
+              {"abbr" in item && item.abbr ? (
+                <span class="report-type-card__abbr">{item.abbr}</span>
+              ) : null}
             </p>
           </li>
         ))

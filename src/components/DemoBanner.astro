@@ -8,17 +8,19 @@ const { demoBanner } = site;
 ---
 
 <SectionPanel
-  panelClass="relative min-h-[30rem] overflow-hidden"
+  panelClass="demo-banner min-h-[30rem]"
   aria-labelledby="demo-banner-heading"
 >
-  <img
-    src={demoBanner.image}
-    alt=""
-    class="absolute inset-0 size-full object-cover object-[26%_18%]"
-    width={1732}
-    height={481}
-    loading="lazy"
-  />
+  <div class="media-frame media-frame--demo-banner absolute inset-0 min-h-[30rem]">
+    <img
+      src={demoBanner.image}
+      alt=""
+      class="media-frame__img media-frame__img--cover object-[26%_18%]"
+      width={1732}
+      height={481}
+      loading="lazy"
+    />
+  </div>
   <div class="absolute inset-0 bg-type/30" aria-hidden="true" />
 
   <SectionShell class="demo-banner__shell relative z-10">
