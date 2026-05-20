@@ -113,6 +113,10 @@ export const site = {
     /** Must match hero-overlay.png pixels exactly (aspect ratio drives layout). */
     heroOverlayWidth: 7680,
     heroOverlayHeight: 4320,
+    /** 9:16 portrait crop for mobile (export from Figma). */
+    heroOverlayMobile: "/images/assets/hero-overlay-mobile.png",
+    heroOverlayMobileWidth: 2160,
+    heroOverlayMobileHeight: 3840,
     footer: "/images/assets/footer-labs.jpg",
   },
   footer: {

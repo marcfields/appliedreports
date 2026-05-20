@@ -267,8 +267,12 @@
     @apply relative min-h-dvh overflow-hidden bg-field;
   }
 
+  .hero__bg-picture {
+    @apply absolute inset-0 z-0 block min-h-dvh w-full overflow-hidden md:static md:min-h-0 md:overflow-visible;
+  }
+
   .hero__bg {
-    @apply pointer-events-none block h-auto w-full opacity-50;
+    @apply pointer-events-none h-full w-full object-cover object-[center_38%] opacity-50 md:block md:h-auto md:w-full md:object-none;
   }
 
   .hero__content {
