@@ -10,8 +10,10 @@ interface Props {
 const { panelClass, class: className, id, "aria-labelledby": ariaLabelledby } = Astro.props;
 ---
 
-<section class:list={["bg-field", className]} id={id} aria-labelledby={ariaLabelledby}>
-  <div class:list={["section-panel", panelClass]}>
-    <slot />
-  </div>
+<section
+  class:list={["w-full", panelClass, className]}
+  id={id}
+  aria-labelledby={ariaLabelledby}
+>
+  <slot />
 </section>

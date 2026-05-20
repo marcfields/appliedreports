@@ -42,14 +42,23 @@
   }
 
   body {
-    @apply bg-field font-sans text-type antialiased;
+    @apply overflow-x-hidden bg-field font-sans text-type antialiased;
   }
 }
 
 @layer components {
-  /* Inset section panels — 1380px on a 1440px artboard, centered on field gutters */
-  .section-panel {
-    @apply mx-auto w-full max-w-[1380px];
+  /* Page canvas — 1380px center column with field gutters (Figma 1440 frame) */
+  .site-canvas {
+    display: grid;
+    grid-template-columns: 1fr min(1380px, calc(100% - 3rem)) 1fr;
+    row-gap: 30px;
+    background-color: var(--color-field);
+  }
+
+  .site-canvas > * {
+    grid-column: 2;
+    min-width: 0;
+    width: 100%;
   }
 
   /* Section layout — padding inside an inset panel */
