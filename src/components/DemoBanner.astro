@@ -1,6 +1,7 @@
 ---
 import { site } from "../site";
 import CtaButton from "./CtaButton.astro";
+import SectionShell from "./SectionShell.astro";
 
 const { demoBanner } = site;
 ---
@@ -16,14 +17,11 @@ const { demoBanner } = site;
   />
   <div class="absolute inset-0 bg-type/30" aria-hidden="true" />
 
-  <div class="relative z-10 mx-auto flex min-h-[30rem] max-w-[87rem] flex-col justify-center px-6 py-16 sm:px-10 lg:px-[6.5rem]">
-    <h2
-      id="demo-banner-heading"
-      class="max-w-[69rem] font-display text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.4] text-paper whitespace-pre-line"
-    >
+  <SectionShell class="relative z-10 flex min-h-[30rem] flex-col justify-center">
+    <h2 id="demo-banner-heading" class="heading-h2 max-w-[76rem] text-paper whitespace-pre-line">
       {demoBanner.heading}
     </h2>
-    <div class="mt-10">
+    <div class="mt-12">
       <CtaButton
         href={site.cta.primary.href}
         label={site.cta.primary.label}
@@ -31,5 +29,5 @@ const { demoBanner } = site;
         newTab={site.cta.primary.newTab}
       />
     </div>
-  </div>
+  </SectionShell>
 </section>

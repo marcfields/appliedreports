@@ -20,23 +20,25 @@ const [heroLineOne, heroLineTwo] = site.heroHeadline;
   <div class="relative z-10 mx-auto flex min-h-dvh max-w-[90rem] flex-col px-6 pb-16 pt-8 sm:px-10 sm:pb-20 sm:pt-10 lg:px-[6.5rem]">
     <SiteHeader />
 
-    <div class="flex flex-1 flex-col items-center justify-center py-12">
-      <div class="flex max-w-[67rem] flex-col items-center gap-6 text-center lg:gap-8">
-        <p class="font-sans text-[1.35rem] font-semibold leading-normal text-[#3c6f91] sm:text-[1.5625rem]">
-          {site.heroKicker}
-        </p>
+    <div class="mt-10 flex flex-1 flex-col justify-center py-16 lg:py-30">
+      <p class="max-w-[40rem] font-sans text-2xl font-normal leading-[1.58] text-[#0E5BD6]">
+        {site.heroKicker}
+      </p>
+
+      <div class="mt-8 flex w-full flex-col items-start gap-8">
         <h1
           id="hero-heading"
-          class="flex flex-col items-center gap-1 font-display text-[clamp(2.5rem,8vw,6.25rem)] font-bold leading-none tracking-tight text-type sm:gap-1.5"
+          class="flex w-full flex-col gap-1 font-display text-[clamp(2.75rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.04em] text-type sm:gap-1.5"
         >
           <span>{heroLineOne}</span>
           <span>{heroLineTwo}</span>
         </h1>
-        <p
-          class="max-w-[67rem] font-sans text-[clamp(1.125rem,2.5vw,1.875rem)] font-semibold leading-[1.4] text-type lg:text-[1.875rem]"
-        >
+        <p class="max-w-[40rem] font-sans text-2xl font-normal leading-[1.58] text-type">
           {site.heroSubcopy}
         </p>
+      </div>
+
+      <div class="mt-12">
         <CtaButton
           href={site.cta.primary.href}
           label={site.cta.primary.label}

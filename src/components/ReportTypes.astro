@@ -1,23 +1,21 @@
 ---
 import { site } from "../site";
+import SectionShell from "./SectionShell.astro";
 
 const { reportTypesSection: section } = site;
 ---
 
 <section id="reports" class="bg-paper" aria-labelledby="reports-heading">
-  <div class="mx-auto max-w-[87rem] px-6 py-16 sm:px-10 sm:py-20 lg:px-[6.5rem] lg:py-24">
-    <h2
-      id="reports-heading"
-      class="font-display text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.4] text-type"
-    >
+  <SectionShell>
+    <h2 id="reports-heading" class="heading-h2 text-type">
       {section.heading}
     </h2>
-    <hr class="mt-8 border-0 border-t border-type/20" />
-    <p class="mt-8 max-w-[72rem] font-sans text-[1.375rem] leading-[1.4] text-type">
+    <hr class="section-divider" />
+    <p class="section-lead text-type">
       {section.body}
     </p>
 
-    <ul class="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-6">
+    <ul class="section-content grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-6">
       {
         section.items.map((item) => (
           <li class="flex flex-col items-center text-center">
@@ -29,12 +27,12 @@ const { reportTypesSection: section } = site;
               height={150}
               loading="lazy"
             />
-            <p class="mt-4 font-sans text-base font-light leading-[1.4] text-type whitespace-pre-line">
+            <p class="table-body mt-4 text-type whitespace-pre-line">
               {item.label}
             </p>
           </li>
         ))
       }
     </ul>
-  </div>
+  </SectionShell>
 </section>

@@ -1,25 +1,21 @@
 ---
 import { site } from "../site";
+import SectionShell from "./SectionShell.astro";
 
 const { ottoIntro } = site;
 ---
 
 <section id="otto" class="scroll-mt-6 bg-tone" aria-labelledby="otto-intro-heading">
-  <div class="mx-auto max-w-[87rem] px-6 py-16 sm:px-10 sm:py-20 lg:px-[6.5rem] lg:py-24">
-    <div class="max-w-[76rem]">
-      <h2
-        id="otto-intro-heading"
-        class="font-display text-[clamp(2rem,5vw,3.75rem)] font-bold leading-[1.4] text-type whitespace-pre-line"
-      >
-        {ottoIntro.heading}
-      </h2>
-      <hr class="mt-8 border-0 border-t border-type/25" />
-      <p class="mt-8 font-sans text-[1.375rem] leading-[1.4] text-type">
-        {ottoIntro.body}
-      </p>
-    </div>
+  <SectionShell>
+    <h2 id="otto-intro-heading" class="heading-h2 text-type whitespace-pre-line">
+      {ottoIntro.heading}
+    </h2>
+    <hr class="section-divider" />
+    <p class="section-lead text-type">
+      {ottoIntro.body}
+    </p>
 
-    <div class="mt-20 space-y-24 lg:space-y-28">
+    <div class="section-steps">
       {
         site.productSteps.map((step) => (
           <article
@@ -49,13 +45,13 @@ const { ottoIntro } = site;
                 step.iconPosition === "right" && "lg:text-right",
               ]}
             >
-              <h3 class="font-display text-[2.1875rem] leading-[1.4] text-type">
+              <h3 class="heading-h3-step text-type">
                 <span class="text-mark">{step.id}</span>
                 <span> {step.title}</span>
               </h3>
               <p
                 class:list={[
-                  "mt-4 font-sans text-[1.375rem] leading-[1.4] text-type",
+                  "table-feature mt-4 text-type",
                   step.iconPosition === "right" && "lg:ml-auto",
                 ]}
               >
@@ -63,7 +59,7 @@ const { ottoIntro } = site;
               </p>
               <p
                 class:list={[
-                  "mt-4 max-w-[59rem] font-sans text-lg font-light leading-[1.4] text-type",
+                  "table-body mt-4 max-w-[59rem] text-type",
                   step.iconPosition === "right" && "lg:ml-auto",
                 ]}
               >
@@ -74,5 +70,5 @@ const { ottoIntro } = site;
         ))
       }
     </div>
-  </div>
+  </SectionShell>
 </section>
