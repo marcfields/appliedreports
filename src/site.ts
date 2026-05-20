@@ -15,7 +15,7 @@ export const site = {
     bodyBefore:
       "Otto is an agent used by engineers to write reports more efficiently. Otto processes site data, builds report sections in the firm template, and surfaces accurate photos, notes, documents, and writing suggestions to the engineer ",
     bodyBold: "directly in Microsoft Word.",
-    image: "/images/assets/otto-product-demo.png",
+    image: "/images/assets/otto-product-demo.jpg",
   },
   reportTypesSection: {
     heading: "Write any report type.",
