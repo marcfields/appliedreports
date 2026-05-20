@@ -8,7 +8,11 @@ import SiteHeader from "./SiteHeader.astro";
 const [heroLineOne, heroLineTwo] = site.heroHeadline;
 ---
 
-<SectionPanel panelClass="relative min-h-dvh overflow-hidden bg-field" aria-labelledby="hero-heading">
+<SectionPanel
+  align="full"
+  panelClass="relative min-h-dvh overflow-hidden bg-field"
+  aria-labelledby="hero-heading"
+>
   <img
     src={site.images.heroOverlay}
     alt=""
@@ -19,9 +23,10 @@ const [heroLineOne, heroLineTwo] = site.heroHeadline;
     decoding="async"
   />
 
-  <SectionShell class="relative z-10 flex min-h-dvh flex-col">
+  <div class="relative z-10 flex min-h-dvh flex-col">
     <SiteHeader />
 
+    <SectionShell class="flex flex-1 flex-col !pt-0">
     <div class="mt-10 flex flex-col items-center text-center sm:mt-12 lg:mt-14">
       <p class="hero-kicker max-w-[40rem]">
         {site.heroKicker}
@@ -48,5 +53,6 @@ const [heroLineOne, heroLineTwo] = site.heroHeadline;
         />
       </div>
     </div>
-  </SectionShell>
+    </SectionShell>
+  </div>
 </SectionPanel>

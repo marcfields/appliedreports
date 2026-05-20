@@ -7,7 +7,11 @@ import SectionShell from "./SectionShell.astro";
 const { demoBanner } = site;
 ---
 
-<SectionPanel panelClass="relative min-h-[30rem] overflow-hidden" aria-labelledby="demo-banner-heading">
+<SectionPanel
+  align="right"
+  panelClass="relative min-h-[30rem] overflow-hidden"
+  aria-labelledby="demo-banner-heading"
+>
   <img
     src={demoBanner.image}
     alt=""

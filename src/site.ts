@@ -119,6 +119,9 @@ export const site = {
     heightPx: 39,
     minWidthPx: 156,
     fontSizePx: 16,
+    navHeightPx: 48,
+    navPaddingX: 28,
+    navFontSizePx: 18,
   },
   cta: {
     primary: {

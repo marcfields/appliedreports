@@ -47,11 +47,20 @@
 }
 
 @layer components {
-  /* Center column — 1380px max on a 1440px frame (30px field gutter per side) */
-  .page-columns {
-    width: 100%;
+  /* Offset color blocks — 1380px wide, flush left or right (60px field gutter at 1440px) */
+  .section-block {
+    width: min(1380px, 100%);
     max-width: 1380px;
-    margin-inline: auto;
+  }
+
+  .section-block--right {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .section-block--left {
+    margin-left: 0;
+    margin-right: auto;
   }
 
   /* Section layout — padding inside an inset panel */
@@ -113,5 +122,29 @@
 
   .table-feature {
     @apply font-sans text-base font-medium leading-[1.4];
+  }
+
+  .nav-link {
+    @apply font-sans text-lg font-semibold leading-none text-type transition hover:text-type/70;
+  }
+
+  .site-header__inner {
+    @apply mx-auto flex h-16 w-full max-w-[1280px] items-center px-6 md:h-20 md:px-8;
+  }
+
+  .site-header__logo {
+    @apply h-8 w-auto md:h-10;
+  }
+
+  .site-header__nav {
+    @apply ml-12 hidden flex-1 items-center justify-end md:flex;
+  }
+
+  .site-header__links {
+    @apply flex items-center gap-8;
+  }
+
+  .site-header__cta {
+    @apply ml-6 shrink-0;
   }
 }
