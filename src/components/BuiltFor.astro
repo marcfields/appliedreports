@@ -13,10 +13,10 @@ const { builtFor } = site;
     </h2>
     <hr class="section-divider" />
 
-    <ul class="section-content grid gap-12 sm:grid-cols-3 sm:gap-8">
+    <ul class="section-content feature-grid">
       {
         builtFor.items.map((item) => (
-          <li class="flex flex-col items-center text-center">
+          <li class="feature-card items-center text-center">
             <img
               src={item.icon}
               alt=""
@@ -25,7 +25,7 @@ const { builtFor } = site;
               height={150}
               loading="lazy"
             />
-            <h3 class="table-header mt-8 text-type">
+            <h3 class="heading-h4 mt-8 text-type">
               {item.title}
             </h3>
             <p class="table-body mt-4 text-type whitespace-pre-line">

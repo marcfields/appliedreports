@@ -27,7 +27,7 @@ const { ottoIntro } = site;
         site.productSteps.map((step) => (
           <article
             class:list={[
-              "grid items-center gap-10 lg:grid-cols-2 lg:gap-16",
+              "grid items-center gap-8 lg:grid-cols-2 lg:gap-8",
               step.iconPosition === "right" && "lg:[&>div:first-child]:order-2",
             ]}
           >
@@ -52,13 +52,13 @@ const { ottoIntro } = site;
                 step.iconPosition === "right" && "lg:text-right",
               ]}
             >
-              <h3 class="heading-h3-step text-type">
+              <h3 class="heading-h3 text-type">
                 <span class="text-mark">{step.id}</span>
                 <span> {step.title}</span>
               </h3>
               <p
                 class:list={[
-                  "step-summary mt-4 text-type",
+                  "heading-h4 mt-4 text-type",
                   step.iconPosition === "right" && "lg:ml-auto",
                 ]}
               >
