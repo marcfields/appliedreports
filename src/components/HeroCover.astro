@@ -8,25 +8,28 @@ const [heroLineOne, heroLineTwo] = site.heroHeadline;
 ---
 
 <SectionPanel panelClass="hero" aria-labelledby="hero-heading">
-  <picture class="hero__bg-picture">
-    <source
-      media="(max-width: 767px)"
-      srcset={site.images.heroOverlayMobile}
-      type="image/png"
+  <img
+    src={site.images.heroOverlay}
+    alt=""
+    class="hero__bg hero__bg--desktop"
+    width={site.images.heroOverlayWidth}
+    height={site.images.heroOverlayHeight}
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  />
+  <div class="hero__bg-mobile" aria-hidden="true">
+    <img
+      src={site.images.heroOverlayMobile}
+      alt=""
+      class="hero__bg hero__bg--mobile"
       width={site.images.heroOverlayMobileWidth}
       height={site.images.heroOverlayMobileHeight}
-    />
-    <img
-      src={site.images.heroOverlay}
-      alt=""
-      class="hero__bg"
-      width={site.images.heroOverlayWidth}
-      height={site.images.heroOverlayHeight}
       loading="eager"
       fetchpriority="high"
       decoding="async"
     />
-  </picture>
+  </div>
 
   <div class="hero__content">
     <SiteHeader />
