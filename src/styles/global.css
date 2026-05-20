@@ -161,9 +161,17 @@
     @apply ml-10 shrink-0;
   }
 
-  /* Hero */
-  .hero-overlay {
-    @apply pointer-events-none absolute inset-0 size-full object-contain object-center opacity-50;
+  /* Hero — background image fills viewport, content on top */
+  .hero {
+    @apply relative min-h-dvh overflow-hidden bg-field;
+  }
+
+  .hero__bg {
+    @apply pointer-events-none absolute inset-0 size-full object-cover object-bottom opacity-50;
+  }
+
+  .hero__content {
+    @apply relative z-10 flex min-h-dvh flex-col;
   }
 
   .hero-header-spacer {
@@ -171,7 +179,7 @@
   }
 
   .hero-shell {
-    @apply flex flex-1 flex-col justify-center pb-20 pt-12 sm:pb-24 sm:pt-14 lg:pb-30 lg:pt-20;
+    @apply flex flex-1 flex-col justify-center pb-20 pt-8 sm:pb-24 sm:pt-14 lg:pb-30 lg:pt-20;
   }
 
   .hero-copy {

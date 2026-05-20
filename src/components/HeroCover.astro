@@ -7,21 +7,18 @@ import SiteHeader from "./SiteHeader.astro";
 const [heroLineOne, heroLineTwo] = site.heroHeadline;
 ---
 
-<SectionPanel
-  panelClass="relative min-h-dvh overflow-hidden bg-field"
-  aria-labelledby="hero-heading"
->
+<SectionPanel panelClass="hero" aria-labelledby="hero-heading">
   <img
     src={site.images.heroOverlay}
     alt=""
-    class="hero-overlay"
+    class="hero__bg"
     width={site.images.heroOverlayWidth}
     height={site.images.heroOverlayHeight}
     loading="eager"
     decoding="async"
   />
 
-  <div class="relative z-10 flex min-h-dvh flex-col">
+  <div class="hero__content">
     <SiteHeader />
     <div class="hero-header-spacer" aria-hidden="true"></div>
 

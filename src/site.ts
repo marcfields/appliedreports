@@ -108,8 +108,8 @@ export const site = {
   },
   images: {
     heroOverlay: "/images/assets/hero-overlay.png",
-    /** Native export size (16:9). object-contain shows the full image in the hero. */
-    heroOverlayWidth: 3840,
+    /** Must match hero-overlay.png pixels exactly (aspect ratio drives layout). */
+    heroOverlayWidth: 1440,
     heroOverlayHeight: 2160,
     footer: "/images/assets/footer-labs.jpg",
   },
