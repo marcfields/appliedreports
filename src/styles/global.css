@@ -200,7 +200,7 @@
 
   .hero-kicker,
   .hero-subcopy {
-    @apply font-sans text-[1.125rem] font-semibold leading-[1.4] tracking-[-0.02em] text-pretty;
+    @apply font-sans text-[1.375rem] font-semibold leading-[1.4] tracking-[-0.02em] text-pretty;
   }
 
   .hero-kicker {
@@ -306,10 +306,6 @@
 
   .report-type-card .table-body {
     @apply mx-0 line-clamp-2 max-w-none text-base leading-snug text-pretty;
-  }
-
-  .report-type-card__abbr {
-    @apply block text-sm font-normal text-type/65;
   }
 
   .feature-card .heading-h4,

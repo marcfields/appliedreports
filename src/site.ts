@@ -23,32 +23,27 @@ export const site = {
     body: "Otto works with a growing list of report types, and can adapt to produce any report the firm authors. Applied Reports works directly with firm engineers to adapt custom or novel templates and report types.",
     items: [
       {
-        label: "Property Condition",
-        abbr: "PCA",
+        label: "Property Condition\nAssessments",
         icon: "/images/assets/icon-pca.png",
       },
       {
-        label: "Roofing Condition",
-        abbr: "RCA",
+        label: "Roofing Condition\nAssessments",
         icon: "/images/assets/icon-rca.png",
       },
       {
-        label: "Reserve Fund Studies",
-        abbr: "RFS",
+        label: "Reserve Fund\nStudies",
         icon: "/images/assets/icon-rfs.png",
       },
       {
-        label: "Site Observation",
-        abbr: "SOR",
+        label: "Site Observation\nReports",
         icon: "/images/assets/icon-sor.png",
       },
       {
-        label: "Environmental Site",
-        abbr: "ESA",
+        label: "Environmental Site\nAssessments",
         icon: "/images/assets/icon-esa.png",
       },
       {
-        label: "Additional Types",
+        label: "Additional\nTypes",
         icon: "/images/assets/icon-more.png",
       },
     ],

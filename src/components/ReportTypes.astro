@@ -28,11 +28,8 @@ const { reportTypesSection: section } = site;
               height={150}
               loading="lazy"
             />
-            <p class="table-body text-type">
+            <p class="table-body whitespace-pre-line text-type">
               {item.label}
-              {"abbr" in item && item.abbr ? (
-                <span class="report-type-card__abbr">{item.abbr}</span>
-              ) : null}
             </p>
           </li>
         ))
