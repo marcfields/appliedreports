@@ -39,6 +39,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -105,7 +106,13 @@
   }
 
   .hero-h1 {
-    @apply font-display text-[clamp(2.75rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.04em];
+    @apply font-display text-[clamp(2.75rem,7vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.04em] text-balance;
+  }
+
+  @media (min-width: 40rem) {
+    .hero-h1 span {
+      white-space: nowrap;
+    }
   }
 
   .hero-subcopy {
@@ -146,5 +153,9 @@
 
   .site-header__cta {
     @apply ml-6 shrink-0;
+  }
+
+  .hero-shell {
+    padding-top: 0;
   }
 }
