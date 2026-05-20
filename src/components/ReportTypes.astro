@@ -28,8 +28,10 @@ const { reportTypesSection: section } = site;
               height={150}
               loading="lazy"
             />
-            <p class="table-body whitespace-pre-line text-type">
-              {item.label}
+            <p class="report-type-card__label text-type">
+              {item.label.split("\n").map((line) => (
+                <span class="report-type-card__line">{line}</span>
+              ))}
             </p>
           </li>
         ))

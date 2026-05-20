@@ -304,8 +304,12 @@
     @apply flex flex-col items-center gap-6 p-4 text-center sm:p-6;
   }
 
-  .report-type-card .table-body {
-    @apply mx-0 line-clamp-2 max-w-none text-base leading-snug text-pretty;
+  .report-type-card__label {
+    @apply mx-0 flex w-full min-w-0 flex-col items-center gap-0 font-sans text-[0.9375rem] leading-snug sm:text-base;
+  }
+
+  .report-type-card__line {
+    @apply block text-center;
   }
 
   .feature-card .heading-h4,
