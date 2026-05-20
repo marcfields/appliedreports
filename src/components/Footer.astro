@@ -6,51 +6,51 @@ const siteHref = site.url;
 const emailHref = `mailto:${site.contactEmail}`;
 ---
 
-<footer class="relative">
+<footer class="footer">
   <img
     src={site.images.footer}
     alt=""
-    class="block aspect-[1440/787] w-full object-cover"
+    class="footer__photo"
     width={1440}
     height={787}
     loading="lazy"
   />
-  <div class="pointer-events-none absolute inset-0 flex items-center px-6 sm:px-10 lg:px-[6.5rem]">
+
+  <div class="footer__content">
     <img
       src={site.logos.arc}
-      alt="Arc"
-      class="mx-auto h-auto w-full max-w-[76rem] opacity-95"
+      alt={site.name}
+      class="footer__logo"
       width={1106}
       height={134}
       loading="lazy"
     />
-  </div>
 
-  <div
-    class="absolute inset-x-0 bottom-0 z-10 px-6 pb-8 pt-24 sm:px-10 sm:pb-10 lg:px-[6.5rem]"
-  >
-    <nav
-      class="table-header mx-auto flex max-w-[87rem] flex-col items-center gap-4 text-center text-field sm:flex-row sm:justify-between sm:gap-6 sm:text-left"
-      aria-label="Footer"
-    >
-      <a
-        href={siteHref}
-        class="transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
-      >
-        {footer.siteLabel}
-      </a>
-      <p class="sm:flex-1 sm:text-center">
-        <span aria-hidden="true">© </span>
-        {site.year}
-        {" "}
-        {footer.copyrightName}
-      </p>
-      <a
-        href={emailHref}
-        class="transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
-      >
-        {footer.emailLabel}
-      </a>
+    <nav class="footer__links table-header" aria-label="Footer">
+      <div>
+        <a
+          href={siteHref}
+          class="transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
+        >
+          {footer.siteLabel}
+        </a>
+      </div>
+      <div>
+        <a
+          href={emailHref}
+          class="transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
+        >
+          {footer.emailLabel}
+        </a>
+      </div>
+      <div>
+        <p>
+          <span aria-hidden="true">© </span>
+          {site.year}
+          {" "}
+          {footer.copyrightName}
+        </p>
+      </div>
     </nav>
   </div>
 </footer>

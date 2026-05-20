@@ -22,17 +22,19 @@ const { demoBanner } = site;
   />
   <div class="absolute inset-0 bg-type/30" aria-hidden="true" />
 
-  <SectionShell class="relative z-10 flex min-h-[30rem] flex-col items-center justify-center text-center">
-    <h2 id="demo-banner-heading" class="heading-h2 max-w-[76rem] text-paper whitespace-pre-line">
-      {demoBanner.heading}
-    </h2>
-    <div class="mt-12">
-      <CtaButton
-        href={site.cta.primary.href}
-        label={site.cta.primary.label}
-        variant="field"
-        newTab={site.cta.primary.newTab}
-      />
+  <SectionShell class="relative z-10 flex min-h-[30rem] flex-col justify-center">
+    <div class="mx-auto flex w-full max-w-[76rem] flex-col items-center text-center">
+      <h2 id="demo-banner-heading" class="heading-h2 text-paper whitespace-pre-line">
+        {demoBanner.heading}
+      </h2>
+      <div class="mt-12">
+        <CtaButton
+          href={site.cta.primary.href}
+          label={site.cta.primary.label}
+          variant="field"
+          newTab={site.cta.primary.newTab}
+        />
+      </div>
     </div>
   </SectionShell>
 </SectionPanel>
