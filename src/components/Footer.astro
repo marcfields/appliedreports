@@ -44,12 +44,7 @@ const { footer } = site;
                   {item.label}
                 </a>
               ) : (
-                <p class="footer__link">
-                  <span aria-hidden="true">© </span>
-                  {site.year}
-                  {" "}
-                  {footer.copyrightName}
-                </p>
+                <p class="footer__link">{item.label}</p>
               )}
             </li>
           ))

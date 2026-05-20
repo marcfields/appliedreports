@@ -108,8 +108,8 @@ export const site = {
   },
   images: {
     heroOverlay: "/images/assets/hero-overlay.png",
-    /** Native export size — used for layout with object-cover */
-    heroOverlayWidth: 1440,
+    /** Native export size (16:9). object-contain shows the full image in the hero. */
+    heroOverlayWidth: 3840,
     heroOverlayHeight: 2160,
     footer: "/images/assets/footer-labs.jpg",
   },
@@ -132,6 +132,7 @@ export const site = {
       },
       {
         kind: "copyright" as const,
+        label: "© 2026 The Applied Reports Company",
         align: "end" as const,
       },
     ],
