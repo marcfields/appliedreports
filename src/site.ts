@@ -108,6 +108,9 @@ export const site = {
   },
   images: {
     heroOverlay: "/images/assets/hero-overlay.png",
+    /** Native export size — used for layout with object-cover */
+    heroOverlayWidth: 1440,
+    heroOverlayHeight: 2160,
     footer: "/images/assets/footer-labs.jpg",
   },
   footer: {
