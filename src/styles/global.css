@@ -271,7 +271,7 @@
   }
 
   .hero-header-spacer {
-    @apply h-[5.625rem] shrink-0 md:h-[6.375rem];
+    @apply h-[calc(5.625rem-10px)] shrink-0 md:h-[calc(6.375rem-10px)];
   }
 
   .hero-shell {
