@@ -198,8 +198,13 @@
     @apply max-md:mx-auto max-md:max-w-[36ch] max-md:text-base font-sans font-normal leading-[1.7] tracking-[-0.025em] text-pretty;
   }
 
+  .hero-kicker,
+  .hero-subcopy {
+    @apply font-sans text-[1.125rem] font-semibold leading-[1.4] tracking-[-0.02em] text-pretty;
+  }
+
   .hero-kicker {
-    @apply font-sans text-[1.5rem] font-semibold leading-[1.35] tracking-[-0.02em] text-[#0e5bd6] md:text-[1.75rem];
+    @apply text-[#0e5bd6];
   }
 
   .hero-h1 {
@@ -213,7 +218,7 @@
   }
 
   .hero-subcopy {
-    @apply mx-auto max-w-[36ch] font-sans text-base font-normal leading-[1.65] tracking-[-0.025em] text-pretty md:max-w-[56rem] md:text-xl;
+    @apply mx-auto max-w-[36ch] text-type md:max-w-[56rem];
   }
 
   .table-header {
@@ -271,7 +276,7 @@
   }
 
   .hero-header-spacer {
-    @apply h-[calc(5.625rem-80px)] shrink-0 md:h-[calc(6.375rem-80px)];
+    @apply h-[calc(5.625rem-110px)] shrink-0 md:h-[calc(6.375rem-110px)];
   }
 
   .hero-shell {
