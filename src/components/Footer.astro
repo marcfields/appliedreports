@@ -26,29 +26,27 @@ const { footer } = site;
       />
 
       <ul class="footer__links" aria-label="Footer">
-        {
-          footer.links.map((item) => (
-            <li
-              class:list={[
-                "footer__link-item",
-                item.align === "start" && "footer__link-item--start",
-                item.align === "center" && "footer__link-item--center",
-                item.align === "end" && "footer__link-item--end",
-              ]}
-            >
-              {item.kind === "link" ? (
-                <a
-                  href={item.href}
-                  class="footer__link transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
-                >
-                  {item.label}
-                </a>
-              ) : (
-                <p class="footer__link">{item.label}</p>
-              )}
-            </li>
-          ))
-        }
+        <li class="footer__link-item footer__link-item--start">
+          <a
+            href={site.url}
+            class="footer__link transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
+          >
+            appliedreports.com
+          </a>
+        </li>
+        <li class="footer__link-item footer__link-item--center">
+          <a
+            href={`mailto:${site.contactEmail}`}
+            class="footer__link transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
+          >
+            hello@appliedreports.com
+          </a>
+        </li>
+        <li class="footer__link-item footer__link-item--end">
+          <p class="footer__link">
+            © {site.year} {footer.copyrightName}
+          </p>
+        </li>
       </ul>
     </div>
   </div>
