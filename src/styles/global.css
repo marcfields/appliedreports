@@ -161,17 +161,17 @@
     @apply ml-10 shrink-0;
   }
 
-  /* Hero — full-width image sets height; copy overlays on top */
+  /* Hero — full-width overlay (no crop); layout matches pre-change hero */
   .hero {
-    @apply relative w-full bg-field;
+    @apply relative min-h-dvh overflow-hidden bg-field;
   }
 
   .hero__bg {
-    @apply pointer-events-none block h-auto w-full opacity-20;
+    @apply pointer-events-none block h-auto w-full opacity-50;
   }
 
   .hero__content {
-    @apply absolute inset-0 z-10 flex flex-col;
+    @apply absolute inset-0 z-10 flex min-h-dvh flex-col;
   }
 
   .hero-header-spacer {
