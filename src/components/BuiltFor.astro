@@ -6,7 +6,7 @@ import SectionShell from "./SectionShell.astro";
 const { builtFor } = site;
 ---
 
-<SectionPanel align="left" panelClass="bg-tone text-type" aria-labelledby="built-for-heading">
+<SectionPanel align="left" panelClass="text-type" aria-labelledby="built-for-heading">
   <SectionShell>
     <h2 id="built-for-heading" class="heading-h2 text-type">
       {builtFor.heading}
@@ -25,7 +25,7 @@ const { builtFor } = site;
               height={150}
               loading="lazy"
             />
-            <h3 class="table-feature mt-8 text-type">
+            <h3 class="table-header mt-8 text-type">
               {item.title}
             </h3>
             <p class="table-body mt-4 text-type whitespace-pre-line">
