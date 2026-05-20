@@ -10,7 +10,7 @@ The site only references files on disk (`src/site.ts`). Nothing loads from Figma
 |------|------|
 | `favicons/favicon-*.png` | Browser tab + Apple touch icon (wired in `Layout.astro`) |
 | `applied-reports-company-logo.svg` | Header wordmark |
-| `assets/otto-product-demo.png` | Otto in Word product visual (navy section) |
+| `assets/otto-product-demo.png` | Otto visual (also in `src/assets/` — bundled at build) |
 | `assets/hero-overlay.png` | Hero blueprint overlay (20% opacity + field tint) |
 | `assets/demo-banner.jpg` | Managing-partner banner photo |
 | `assets/footer-labs.jpg` | Footer background |

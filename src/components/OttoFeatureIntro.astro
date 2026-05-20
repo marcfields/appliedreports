@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { site } from "../site";
+import ottoProductDemo from "../assets/otto-product-demo.png";
 
 const { ottoFeatureIntro: section } = site;
 ---
@@ -18,13 +20,14 @@ const { ottoFeatureIntro: section } = site;
       <strong class="font-bold">{section.bodyBold}</strong>
     </p>
     <div class="mt-12 flex justify-center lg:mt-16">
-      <img
-        src={section.image}
+      <Image
+        src={ottoProductDemo}
         alt="Otto in Microsoft Word showing site photos, notes, and writing suggestions"
-        class="w-full max-w-[66rem] rounded-[1.2rem] object-contain"
-        width={1024}
-        height={926}
+        class="w-full max-w-[66rem] rounded-[1.2rem]"
+        widths={[1062, 800, 600]}
+        sizes="(max-width: 66rem) 100vw, 66rem"
         loading="lazy"
+        decoding="async"
       />
     </div>
   </div>
