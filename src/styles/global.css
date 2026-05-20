@@ -199,8 +199,9 @@
     @apply flex flex-col items-center px-4 py-8 text-center sm:px-6 lg:px-8;
   }
 
+  .feature-card .heading-h4,
   .feature-card .table-body {
-    @apply mx-auto w-full max-w-[24rem];
+    @apply mx-auto w-full max-w-[36rem];
   }
 
   .feature-grid {
