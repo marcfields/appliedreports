@@ -1,36 +1,44 @@
-# Site images
+# Site images (local, committed)
 
-Files in `public/images/` are served from `/images/…`.
+All marketing visuals live under **`public/images/`** and are served at **`/images/…`**.
 
-## Hero (full-bleed cover)
+The site only references files on disk (`src/site.ts`). Nothing loads from Figma at runtime.
 
-| File | Used on |
-|------|---------|
-| **`hero.jpg`** | Full-viewport background on the homepage (`HeroCover`) |
+## Layout
 
-Landscape orientation works best (e.g. 1920×1080 or larger). `.webp` is fine if you set `heroImage` in `src/site.ts`.
+| Path | Role |
+|------|------|
+| `applied-reports-company-logo.svg` | Header wordmark |
+| `assets/otto-product-demo.png` | Otto in Word product visual (navy section) |
+| `assets/hero-overlay.jpg` | Hero blueprint overlay (20% opacity) |
+| `assets/demo-banner.jpg` | Managing-partner banner photo |
+| `assets/footer-labs.jpg` | Footer background |
+| `assets/arc-logo.png` | Arc wordmark on footer |
+| `assets/icon-*.png` | Report-type grid + Otto + Built-for icons |
 
-## Logos
+## When the design changes
 
-| File | Used on |
-|------|---------|
-| `applied-reports-company-logo.svg` | Hero masthead (height set in `src/site.ts` → `logos.heroHeightPx`) |
-| `applied-reports-logo.svg` | Wordmark only — reserved for other surfaces |
+1. Open [ReportBolt — Desktop - 1](https://www.figma.com/design/cJd2TTnVlX1NiZk4h28iKn/ReportBolt?node-id=779-561).
+2. Select the layer (icon, photo, or frame).
+3. **Export** → PNG (icons @2x) or JPG (photos) → save into `public/images/assets/` using the **same filename** as in `src/site.ts`.
+4. `bun dev` → hard refresh (`Cmd+Shift+R`).
+5. `git add public/images/assets/` and commit.
 
-### Favicon and small sizes
+**ESA / composite icons:** export the whole `icon-esa` frame as one PNG, not individual vector parts.
 
-You do **not** need separate SVG exports for the hero or page body — one SVG scales cleanly.
+## Verify
 
-You **should** add a simple **mark** (monogram or icon only, not the full stacked company name) for:
+```bash
+ls public/images/assets/
+open http://localhost:4321/images/assets/icon-pca.png
+```
 
-| Asset | Size | File (suggested) |
-|-------|------|------------------|
-| Favicon | 32×32 (SVG or PNG) | `public/favicon.svg` |
-| Apple touch icon | 180×180 PNG | `public/apple-touch-icon.png` |
-| Open Graph / social | 1200×630 PNG | optional, for link previews |
+404 → file missing or dev server not running from repo root.
 
-The full company logo will not read at 16–32px. Replace the placeholder `favicon.svg` when you have a mark.
+## Headline fonts (separate)
 
-## After adding files
+GT Sectra files go in `public/fonts/gt-sectra-display/` (see that folder’s README). Not stored in git by default.
 
-Restart `bun dev` if it is running, then hard-refresh the browser.
+## Optional one-time download script
+
+`scripts/download-local-assets.sh` can bootstrap files into `public/images/assets/`. Prefer manual Figma export for future updates.

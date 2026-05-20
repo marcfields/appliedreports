@@ -9,7 +9,7 @@ const { demoBanner } = site;
   <img
     src={demoBanner.image}
     alt=""
-    class="absolute inset-0 size-full object-cover"
+    class="absolute inset-0 size-full object-cover object-[26%_18%]"
     width={1732}
     height={481}
     loading="lazy"
@@ -24,7 +24,12 @@ const { demoBanner } = site;
       {demoBanner.heading}
     </h2>
     <div class="mt-10">
-      <CtaButton href={site.cta.primary.href} label={site.cta.primary.label} variant="field" />
+      <CtaButton
+        href={site.cta.primary.href}
+        label={site.cta.primary.label}
+        variant="field"
+        newTab={site.cta.primary.newTab}
+      />
     </div>
   </div>
 </section>

@@ -1,5 +1,9 @@
 ---
 import { site } from "../site";
+
+const { footer } = site;
+const siteHref = site.url;
+const emailHref = `mailto:${site.contactEmail}`;
 ---
 
 <footer class="relative">
@@ -20,5 +24,33 @@ import { site } from "../site";
       height={134}
       loading="lazy"
     />
+  </div>
+
+  <div
+    class="absolute inset-x-0 bottom-0 z-10 px-6 pb-8 pt-24 sm:px-10 sm:pb-10 lg:px-14"
+  >
+    <nav
+      class="mx-auto flex max-w-[90rem] flex-col items-center gap-4 text-center font-sans text-lg font-bold leading-[1.4] text-field sm:flex-row sm:justify-between sm:gap-6 sm:text-left"
+      aria-label="Footer"
+    >
+      <a
+        href={siteHref}
+        class="transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
+      >
+        {footer.siteLabel}
+      </a>
+      <p class="sm:flex-1 sm:text-center">
+        <span aria-hidden="true">© </span>
+        {site.year}
+        {" "}
+        {footer.copyrightName}
+      </p>
+      <a
+        href={emailHref}
+        class="transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-field"
+      >
+        {footer.emailLabel}
+      </a>
+    </nav>
   </div>
 </footer>

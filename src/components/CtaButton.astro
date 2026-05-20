@@ -6,9 +6,10 @@ interface Props {
   label: string;
   variant?: "mark" | "field" | "paper";
   class?: string;
+  newTab?: boolean;
 }
 
-const { href, label, variant = "mark", class: className = "" } = Astro.props;
+const { href, label, variant = "mark", class: className = "", newTab = false } = Astro.props;
 const { heightPx, minWidthPx, fontSizePx } = site.ctaButton;
 
 const variants = {
@@ -26,6 +27,8 @@ const variants = {
     className,
   ]}
   style={`height:${heightPx}px;min-width:${minWidthPx}px;font-size:${fontSizePx}px;padding-left:1.25rem;padding-right:1.25rem;`}
+  target={newTab ? "_blank" : undefined}
+  rel={newTab ? "noopener noreferrer" : undefined}
 >
   {label}
 </a>

@@ -1,5 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 
+/* GT Sectra Display — add .woff2 files to public/fonts/gt-sectra-display/ */
+@font-face {
+  font-family: "GT Sectra Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("GT Sectra Display Regular"),
+    local("GT-Sectra-Display-Regular"),
+    url("/fonts/gt-sectra-display/GT-Sectra-Display-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "GT Sectra Display";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local("GT Sectra Display Bold"),
+    local("GT-Sectra-Display-Bold"),
+    url("/fonts/gt-sectra-display/GT-Sectra-Display-Bold.woff2") format("woff2");
+}
+
 @import "tailwindcss";
 
 @theme {
@@ -9,7 +32,7 @@
   --color-type: #0a162b;
   --color-mark: #9e2a2b;
 
-  --font-display: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-display: "GT Sectra Display", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --font-sans: "JetBrains Mono", ui-monospace, "Cascadia Code", "SF Mono", Menlo, monospace;
 }
 

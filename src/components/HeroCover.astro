@@ -24,17 +24,21 @@ import SiteHeader from "./SiteHeader.astro";
       </p>
       <h1
         id="hero-heading"
-        class="max-w-[64rem] font-display text-[clamp(2.5rem,8vw,6.25rem)] font-bold leading-[1.4] tracking-tight text-type"
+        class="max-w-[64rem] font-display text-[clamp(2.5rem,8vw,6.25rem)] font-bold leading-normal tracking-tight text-type"
       >
         {site.heroLine}
       </h1>
       <p
-        class="mt-10 max-w-[67rem] font-sans text-[clamp(1.125rem,2.5vw,2.1875rem)] font-semibold leading-[1.4] text-type"
+        class="mt-10 max-w-[67rem] font-sans text-[clamp(1.125rem,2.5vw,1.875rem)] font-semibold leading-[1.4] text-type lg:text-[1.875rem]"
       >
         {site.heroSubcopy}
       </p>
       <div class="mt-14">
-        <CtaButton href={site.cta.primary.href} label={site.cta.primary.label} />
+        <CtaButton
+          href={site.cta.primary.href}
+          label={site.cta.primary.label}
+          newTab={site.cta.primary.newTab}
+        />
       </div>
     </div>
   </div>

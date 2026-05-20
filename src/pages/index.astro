@@ -4,6 +4,7 @@ import BuiltFor from "../components/BuiltFor.astro";
 import DemoBanner from "../components/DemoBanner.astro";
 import Footer from "../components/Footer.astro";
 import HeroCover from "../components/HeroCover.astro";
+import OttoFeatureIntro from "../components/OttoFeatureIntro.astro";
 import OttoSection from "../components/OttoSection.astro";
 import ReportTypes from "../components/ReportTypes.astro";
 import Layout from "../layouts/Layout.astro";
@@ -15,6 +16,7 @@ const description = site.heroSubcopy;
 <Layout title="Home" description={description}>
   <main>
     <HeroCover />
+    <OttoFeatureIntro />
     <ReportTypes />
     <OttoSection />
     <BuiltFor />
